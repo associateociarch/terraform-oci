@@ -13,5 +13,5 @@ variable "compartment_description" {
 }
 
 variable "compartment_name" {
-  default = "TF-compartment"
+  default = "TF1-compartment"
 }
