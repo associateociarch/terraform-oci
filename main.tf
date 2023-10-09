@@ -19,6 +19,7 @@ resource "oci_core_subnet" "tf_subnet" {
     for_each = var.subnet
     cidr_block = each.value
     display_name = each.key
-    compartment_id = var.compartment_id
+    compartment_id = oci_identity_compartment.tf_compartment.id
     vcn_id = oci_core_vcn.tf_vcn.id
+    depends_on = [ oci_identity_compartment.tf_compartment ]
 }
