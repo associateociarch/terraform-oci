@@ -13,5 +13,21 @@ variable "compartment_description" {
 }
 
 variable "compartment_name" {
-  default = "TF1-compartment"
+  default = "TF-compartment"
+}
+
+variable "vcn_cidr_blocks" {
+  default = "10.0.0.0/16"
+}
+
+variable "vcn_display_name" {
+  default = "TF-vnc"
+}
+
+variable "subnet" {
+  type = map
+  default = {
+    pub_subnet = "10.0.0.0/24"
+    pvt_subnet = "10.0.1.0/24"
+  }
 }
